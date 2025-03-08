@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda</title>
+    <link rel="stylesheet" href="../css/MainPage.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/about.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <div class="about-content">
+        <h1>Hakkımızda</h1>
+        <div class="about-text">
+            <p>Evcil hayvan sahiplendirme platformumuz, sevgi dolu yuvalarını bekleyen dostlarımızla onlara yuva olmak isteyen aileleri buluşturmayı amaçlamaktadır.</p>
+            <p>Misyonumuz, her evcil hayvanın hak ettiği sevgi dolu bir yuvaya kavuşmasını sağlamak ve hayvan sahiplenme sürecini hem hayvanlar hem de sahiplenenler için güvenli ve mutlu bir deneyime dönüştürmektir.</p>
+            <p>Platformumuz üzerinden:</p>
+            <ul>
+                <li>Sahiplendirilmeyi bekleyen evcil hayvanları görebilir</li>
+                <li>Detaylı filtreleme seçenekleriyle size uygun dostunuzu bulabilir</li>
+                <li>Sahiplendirme sürecini güvenli bir şekilde yönetebilirsiniz</li>
+            </ul>
+            <p>Sizleri de bu anlamlı yolculukta yanımızda görmekten mutluluk duyarız.</p>
+        </div>
+    </div>
+
+    <script>
+        // Header'ı yükle
+        fetch('../html/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                initializeHeaderScroll();
+                updateActiveNavLink();
+            })
+            .catch(error => console.error('Header yüklenirken hata oluştu:', error));
+
+        // Header scroll efekti
+        function initializeHeaderScroll() {
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Aktif sayfa linkini güncelle
+        function updateActiveNavLink() {
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                if (link.textContent === 'Hakkımızda') {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+    </script>
+
+    <script src="../js/modal.js"></script>
+</body>
+</html>

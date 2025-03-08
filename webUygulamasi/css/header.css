@@ -1,0 +1,119 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    padding: 15px 40px;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+/* Scroll durumunda header'ı görünür yap */
+.header.scrolled {
+    background-color: rgba(51, 51, 51, 0.9);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 2rem;
+    margin: 0 auto;
+}
+
+.nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.nav-menu a:hover {
+    color: #FF8C00;
+}
+
+.nav-menu a.active {
+    color: #FF8C00;
+}
+
+.search-container {
+    position: relative;
+    margin-right: 2rem;
+}
+
+.search-input {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 200px;
+    font-size: 0.9rem;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #FF8C00;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.auth-button {
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.login-btn {
+    background-color: transparent;
+    border: 1px solid #FF8C00;
+    color: #FF8C00;
+}
+
+.login-btn:hover {
+    background-color: #FF8C00;
+    color: white;
+}
+
+.register-btn {
+    background-color: #FF8C00;
+    color: white;
+    border: 1px solid #FF8C00;
+}
+
+.register-btn:hover {
+    background-color: #e67e00;
+    border-color: #e67e00;
+}

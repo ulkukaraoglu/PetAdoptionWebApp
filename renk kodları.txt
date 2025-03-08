@@ -14,10 +14,14 @@ Arka Plan: #F8F9FA (Açık Gri – Göz yormayan ve temiz görünüm)
 Odaklandığında (Focus): #EF233C (Canlı Kırmızı – Kullanıcı etkileşimini belirginleştirir)
 Placeholder Yazısı: #A0A3B1 (Soluk Gri – Kullanıcının dikkatini dağıtmadan yönlendirir)
 Yazı Rengi: #2B2D42 (Koyu Gri – Okunaklı ve net)
+
 Textbox Hatalı Giriş (Error State)
 Çerçeve: #E63946 (Kırmızı – Hata durumunda kullanıcıyı yönlendirmek için)
 Arka Plan: #FAE3E3 (Hafif Pembe – Göz yormayan hata bildirimi)
 Hata Mesajı: #D72638 (Daha koyu kırmızı – Kullanıcıya net geri bildirim verir)
+
 Textbox Başarı Durumu (Success State)
 Çerçeve: #4CAF50 (Yeşil – Başarılı girişlerde kullanıcıyı bilgilendirmek için)
 Arka Plan: #E8F5E9 (Hafif Yeşil – Göz yormayan başarı bildirimi)
+
+https://lana.solutions/lana-pet-html/html/archive-lana_story.html

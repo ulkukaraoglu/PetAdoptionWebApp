@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim</title>
+    <link rel="stylesheet" href="../css/MainPage.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/modal.css">
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <div class="contact-container">
+        <div class="contact-info">
+            <h1>İletişim</h1>
+            <div class="info-items">
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h3>Adres</h3>
+                        <p>Örnek Mahallesi, Hayvan Dostları Sokak No:123<br>Ankara, Türkiye</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h3>Telefon</h3>
+                        <p>+90 (312) 123 45 67</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h3>E-posta</h3>
+                        <p>info@petsahiplendirme.com</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Bize Ulaşın</h2>
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Adınız Soyadınız</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">E-posta Adresiniz</label>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" name="phone" required>
+                    <label for="phone">Telefon Numaranız</label>
+                </div>
+                <div class="form-group">
+                    <select id="subject" name="subject" required>
+                        <option value="">Konu Seçiniz</option>
+                        <option value="sahiplendirme">Sahiplendirme</option>
+                        <option value="bilgi">Bilgi Alma</option>
+                        <option value="oneri">Öneri/Şikayet</option>
+                        <option value="diger">Diğer</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" required></textarea>
+                    <label for="message">Mesajınız</label>
+                </div>
+                <button type="submit" class="submit-btn">Gönder</button>
+            </form>
+        </div>
+
+        <div class="map-container">
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d195884.0584279854!2d32.62259861640625!3d39.90334370000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d347d520732db1%3A0xbdc57b0c0842b8d!2sAnkara!5e0!3m2!1str!2str!4v1625482641234!5m2!1str!2str"
+                width="100%" 
+                height="100%" 
+                style="border:0;" 
+                allowfullscreen="" 
+                loading="lazy">
+            </iframe>
+        </div>
+    </div>
+
+    <script>
+        // Header'ı yükle
+        fetch('../html/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+                initializeHeaderScroll();
+                updateActiveNavLink();
+            })
+            .catch(error => console.error('Header yüklenirken hata oluştu:', error));
+
+        // Header scroll efekti
+        function initializeHeaderScroll() {
+            const header = document.querySelector('.header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Aktif sayfa linkini güncelle
+        function updateActiveNavLink() {
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href').includes('contact')) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        }
+
+        // Form gönderimi
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Burada form verilerini işleyebilirsiniz
+            alert('Mesajınız başarıyla gönderildi!');
+            this.reset();
+        });
+    </script>
+
+    <script src="../js/modal.js"></script>
+</body>
+</html>

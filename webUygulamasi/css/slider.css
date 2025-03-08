@@ -1,0 +1,77 @@
+.slider-content {
+    position: fixed;
+    top: 50%;
+    left: 100px;
+    transform: translateY(-50%);
+    color: white;
+    max-width: 600px;
+}
+
+.slider-content h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    opacity: 1;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.slider-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.slider-content.fade-out h1,
+.slider-content.fade-out p {
+    opacity: 0;
+    transform: translateY(0);
+}
+
+.slider-content.fade-in h1,
+.slider-content.fade-in p {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slider-nav {
+    position: fixed;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-button {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    opacity: 1;
+}
+
+.slider-dots {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 30px;
+    height: 3px;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background-color: #FF8C00;
+}
