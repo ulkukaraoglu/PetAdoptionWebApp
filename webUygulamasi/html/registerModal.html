@@ -1,32 +1,44 @@
 <!-- Register Modal -->
-<div id="registerModal" class="modal">
+<div class="modal" id="registerModal">
     <div class="modal-content">
-        <span class="close-button" id="closeRegisterModal">&times;</span>
+        <button class="modal-close">&times;</button>
         <div class="modal-header">
-            <h2>Kayıt Ol</h2>
+            <h2 class="modal-title">Kayıt Ol</h2>
         </div>
         <form id="registerForm">
             <div class="form-group">
                 <label for="registerName">Ad Soyad</label>
-                <input type="text" id="registerName" name="name" required>
+                <input type="text" class="form-control" id="registerName" placeholder="Ad ve soyadınız">
             </div>
             <div class="form-group">
                 <label for="registerEmail">E-posta</label>
-                <input type="email" id="registerEmail" name="email" required>
+                <input type="email" class="form-control" id="registerEmail" placeholder="E-posta adresiniz">
             </div>
             <div class="form-group">
                 <label for="registerPassword">Şifre</label>
-                <input type="password" id="registerPassword" name="password" required>
+                <input type="password" class="form-control" id="registerPassword" placeholder="Şifreniz">
             </div>
             <div class="form-group">
                 <label for="registerPasswordConfirm">Şifre Tekrar</label>
-                <input type="password" id="registerPasswordConfirm" name="passwordConfirm" required>
+                <input type="password" class="form-control" id="registerPasswordConfirm" placeholder="Şifrenizi tekrar girin">
             </div>
-            <button type="submit" class="register-modal-btn">Kayıt Ol</button>
-            <div class="login-link">
-                <span>Zaten hesabın var mı?</span>
-                <a href="#" id="showLoginModal">Giriş Yap</a>
+            <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="terms">
+                <label class="form-check-label" for="terms">Kullanım koşullarını kabul ediyorum</label>
             </div>
+            <button type="submit" class="btn-modal btn-register">Kayıt Ol</button>
         </form>
+        <div class="social-login">
+            <div class="social-login-title">veya şununla kayıt ol</div>
+            <div class="social-buttons">
+                <button type="button" class="social-button">
+                    <img src="../images/google-icon.svg" alt="Google">
+                    Google
+                </button>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 20px; color: rgba(255, 255, 255, 0.7);">
+            Zaten hesabınız var mı? <a href="#" id="showLogin" style="color: #FF8C00; text-decoration: none;">Giriş Yap</a>
+        </div>
     </div>
 </div>

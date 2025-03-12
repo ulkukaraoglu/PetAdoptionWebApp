@@ -1,22 +1,38 @@
 <header class="header">
-    <div class="header-container">
-        <div class="logo">
-            <img src="../images/logo.png" alt="Site Logo">
+    <div class="header-container d-flex flex-wrap align-items-center justify-content-between">
+        <div class="logo d-flex align-items-center">
+            <a href="/html/MainPage.html">
+                <img src="../images/logo.png" alt="Site Logo">
+            </a>
         </div>
 
-        <nav class="nav-menu">
-            <a href="/html/MainPage.html">Ana Sayfa</a>
-            <a href="/html/about.html">Hakkımızda</a>
-            <a href="/html/contact.html">İletişim</a>
+        <nav class="nav-menu col-lg-auto me-lg-auto mb-2 justify-content-center">
+            <a href="/html/MainPage.html" class="nav-link px-2">Ana Sayfa</a>
+            <a href="/html/about.html" class="nav-link px-2">Hakkımızda</a>
+            <a href="/html/contact.html" class="nav-link px-2">İletişim</a>
         </nav>
 
-        <div class="search-container">
-            <input type="search" class="search-input" placeholder="Ara..." aria-label="Ara">
+        <div class="search-container col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+            <input type="search" class="form-control search-input" placeholder="Ara..." aria-label="Ara">
         </div>
 
-        <div class="auth-buttons">
-            <button type="button" class="auth-button login-btn" id="loginBtn">Giriş Yap</button>
-            <button type="button" class="auth-button register-btn">Kayıt Ol</button>
+        <!-- Giriş yapmamış kullanıcılar için -->
+        <div class="auth-buttons" id="authButtons">
+            <button type="button" class="btn btn-outline-primary me-2" id="loginBtn">Giriş Yap</button>
+            <button type="button" class="btn btn-primary register-btn">Kayıt Ol</button>
+        </div>
+
+        <!-- Giriş yapmış kullanıcılar için -->
+        <div class="dropdown text-end" id="userDropdown" style="display: none;">
+            <a href="#" class="d-block link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="../images/default-avatar.png" alt="Kullanıcı" width="32" height="32" class="rounded-circle">
+            </a>
+            <ul class="dropdown-menu text-small">
+                <li><a class="dropdown-item" href="#">Profilim</a></li>
+                <li><a class="dropdown-item" href="#">Ayarlar</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item" href="#" id="logoutBtn">Çıkış Yap</a></li>
+            </ul>
         </div>
     </div>
 </header>
