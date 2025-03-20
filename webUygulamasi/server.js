@@ -9,19 +9,18 @@ app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/html', express.static(path.join(__dirname, 'html')));
 
-// Ana sayfa yönlendirmesi
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'html', 'MainPage.html'));
-});
+// Dinamik sayfa yönlendirmeleri
+const pages = {
+    '/': 'MainPage.html',
+    '/about': 'about.html',
+    '/contact': 'contact.html'
+};
 
-// Hakkımızda sayfası
-app.get('/about', (req, res) => {
-    res.sendFile(path.join(__dirname, 'html', 'about.html'));
-});
-
-// İletişim sayfası
-app.get('/contact', (req, res) => {
-    res.sendFile(path.join(__dirname, 'html', 'contact.html'));
+// Dinamik route handler
+Object.entries(pages).forEach(([route, page]) => {
+    app.get(route, (req, res) => {
+        res.sendFile(path.join(__dirname, 'html', page));
+    });
 });
 
 app.listen(PORT, () => {

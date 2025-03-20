@@ -15,4 +15,11 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-color: #EDF2F4;
+    position: relative;
+}
+
+/* Header için boşluk */
+#header-container {
+    width: 100%;
+    z-index: 100;
 }
