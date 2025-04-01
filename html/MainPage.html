@@ -10,6 +10,30 @@
     <link rel="stylesheet" href="../css/slider.css">
     <link rel="stylesheet" href="../css/modal.css">
     <link rel="stylesheet" href="../css/header.css">
+    
+    <!-- Firebase SDK'ları -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    
+    <!-- Firebase yapılandırması -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyApVA0DWDNeYIsTm5IcwPVdIWJya6sTENU",
+            authDomain: "petadoption-b33b9.firebaseapp.com",
+            databaseURL: "https://petadoption-b33b9-default-rtdb.firebaseio.com",
+            projectId: "petadoption-b33b9",
+            storageBucket: "petadoption-b33b9.firebasestorage.app",
+            messagingSenderId: "435395318116",
+            appId: "1:435395318116:web:6e4c33947c6ef927eb2a71",
+            measurementId: "G-9EWXZXDPSD"
+        };
+        
+        // Firebase'i başlat
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- Auth işlemleri için gerekli script -->
+    <script src="../js/auth.js"></script>
 </head>
 <body>
     <div id="header-container"></div>
